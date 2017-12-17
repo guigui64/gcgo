@@ -144,3 +144,10 @@ func Min(s interface{}) (imin int) {
 	}
 	return
 }
+
+func InsertInt(s []int, pos, value int) []int {
+	s = append(s, 0)
+	copy(s[pos+1:], s[pos:])
+	s[pos] = value
+	return s
+}
