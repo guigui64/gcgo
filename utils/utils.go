@@ -145,9 +145,17 @@ func Min(s interface{}) (imin int) {
 	return
 }
 
+// InsertInt inserts an int in a slice at a specified position
 func InsertInt(s []int, pos, value int) []int {
 	s = append(s, 0)
 	copy(s[pos+1:], s[pos:])
 	s[pos] = value
+	return s
+}
+
+// DeleteInt deletes element at specified position WITHOUT preserving order
+func DeleteInt(s []int, pos int) []int {
+	s[pos] = s[len(s)-1]
+	s = s[:len(s)-1]
 	return s
 }
